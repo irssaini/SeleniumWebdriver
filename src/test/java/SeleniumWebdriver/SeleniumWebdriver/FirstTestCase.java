@@ -2,15 +2,22 @@ package SeleniumWebdriver.SeleniumWebdriver;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class FirstTestCase {
 
 	public static void main(String[] args) {
 			// TODO Auto-generated method stub
 	//lauch chrome browser
-			System.setProperty("webdriver.chrome.driver", "C:\\Data\\Selenium\\chromedriver_win32 (4)\\chromedriver.exe");
-			WebDriver driver =new ChromeDriver();
-			//Launch google.in
+			//System.setProperty("webdriver.chrome.driver", "D:\\Users\\ramin\\eclipse-workspace\\SeleniumWebdriver\\Drivers\\chromedriver.exe");
+			//WebDriver driver =new ChromeDriver();
+		WebDriverManager.chromedriver().setup();
+		ChromeOptions options = new ChromeOptions();
+		WebDriver driver = new ChromeDriver(options);	
+		
+		//Launch google.in
 			driver.navigate().to("https://www.google.co.in/");
 			
 			//capture tittle of webpage and print

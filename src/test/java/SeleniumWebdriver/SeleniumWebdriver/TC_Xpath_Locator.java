@@ -6,16 +6,23 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TC_Xpath_Locator {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.setProperty("webdriver.chrome.driver",
-				"C:\\Data\\RSSaini\\x\\SeleniumWebdriver\\Drivers\\chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver","C:\\Data\\RSSaini\\x\\SeleniumWebdriver\\Drivers\\chromedriver.exe");
+		//WebDriver driver = new ChromeDriver();
 
-		WebDriver driver = new ChromeDriver();
+				WebDriverManager.chromedriver().setup();
 
+				ChromeOptions options = new ChromeOptions();
+
+				WebDriver driver = new ChromeDriver(options);
+				
 		// open sauce demo web page
 		driver.get("https://www.saucedemo.com/");
 
